@@ -9,6 +9,7 @@ chapters:
 - file: fts/fts
   sections: 
   - file: fts/integration
+  - file: fts/ftsKeywords
 # - file: markdown
 # - file: notebooks
 # - file: markdown-notebooks
