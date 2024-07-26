@@ -6,6 +6,8 @@ root: intro
 chapters:
 - file: Overview
 - file: ticg/particles
+  sections:
+  - file: ticg/psKeywords
 - file: fts/fts
   sections: 
   - file: fts/integration
