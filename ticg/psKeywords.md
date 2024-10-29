@@ -5,6 +5,31 @@ As with all simulations using this code, the first step is to define the box:
 
 Keywords for an PS box follow. Anything inside of square brackets represents an argument to be defined by the user.
 
+#### blockSize
+
+
+#### bond
+`bond [bond type integer] [style] [parameters]`
+
+Defines parameters for each bond style used in the simulation. The `bond type integer` must match the molecule definitions where the molecules are defined, either using the `molecule` command or reading from a data/gsd file. Style must be `harmonic` or `fene`.
+
+Style options and parameters:
+
+`harmonic [spring constant] [equil dist]`
+
+Uses a potential $u(\mathbf{r}_{ij}) = k \; (|\mathbf{r}_{ij}|-r_0)^2$ where $k$ and $r_0$ are the force constant and equilibrium distance, respectively.
+
+`fene [prefactor] [maximum distance]`
+
+Uses a potential $u(\mathbf{r}_{ij}) = - k\; r_{max}^2 \log \left[ 1-(|\mathbf{r}_{ij}|/r_{max})^2 \right]$.
+
+```
+bond 1 harmonic 1.5 0.0
+bond 2 harmonic 500 1.0
+bond 3 fene 30.0 1.5
+```
+
+
 #### boxLengths
 ``boxLengths [x-value y-value (optional)z-value]``
 
@@ -13,6 +38,16 @@ List of float box lengths in each dimension. There should be one float for every
 ```
 boxLengths 25.0 25.0
 boxLengths 6.0 6.0 6.0
+```
+
+#### datFileName
+``datFileName [string]``
+
+Name of the data file that stores the time step values, energies, etc
+
+```
+datFileName data.dat
+datFileName garbage.dat
 ```
 
 #### Dim
@@ -35,6 +70,12 @@ grid 225 225
 grid 63 63 63
 ```
 
+#### gsdFreq
+
+#### gsdName
+
+#### integrator
+
 
 
 #### logFreq
@@ -45,6 +86,24 @@ Number of iterations between writes to the log file.
 ```
 logFreq 100
 ```
+
+#### MAXANGLES
+
+#### MAXBONDS
+
+#### molecule
+optional: xrange, yrange, zrange. All set the range for first monomer, rest is grown as random walk.
+
+#### Nr
+
+#### NSEXTRA
+
+#### pmeorder
+
+#### randSeed
+
+#### rho0
+
 
 #### species
 `species [label] [optional arguments]`
