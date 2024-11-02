@@ -12,6 +12,7 @@ chapters:
   sections: 
   - file: fts/integration
   - file: fts/ftsKeywords
+- file: utils
 - file: publications
 # - file: markdown
 # - file: notebooks

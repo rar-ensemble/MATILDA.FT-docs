@@ -132,3 +132,13 @@ species A mobility 1.0
 #### potential
 `potential [style] [group I] [group J] [parameters]`
 
+#### verbose
+`verbose [val]`
+
+Sets the code for the current box to be 'verbose' if val = 1, meaning tons of information will be printed to the screen about where the code is. This also enables some calls to cudaDeviceSynchronize(), which can be useful for debugging. This WILL slow the code down and the total number of steps run in this mode should be minimal. 
+
+Default: 0 (false)
+
+```
+verbose 1
+```
