@@ -5,9 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: Overview
-- file: ticg/particles
+- file: ps/particles
   sections:
-  - file: ticg/psKeywords
+  - file: ps/psKeywords
 - file: fts/fts
   sections: 
   - file: fts/integration
