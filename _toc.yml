@@ -8,6 +8,7 @@ chapters:
 - file: ps/particles
   sections:
   - file: ps/psKeywords
+  - file: ps/psPotentials
 - file: fts/fts
   sections: 
   - file: fts/integration

@@ -5,10 +5,17 @@ As with all simulations using this code, the first step is to define the box:
 
 Keywords for an PS box follow. Anything inside of square brackets represents an argument to be defined by the user.
 
-#### blockSize
+### blockSize
+`blockSize [int value]`
+
+Number of GPU threads within a threadblock on the GPU. Typical values are in the range of 128 - 512.
+
+```
+blockSize 256
+```
 
 
-#### bond
+### bond
 `bond [bond type integer] [style] [parameters]`
 
 Defines parameters for each bond style used in the simulation. The `bond type integer` must match the molecule definitions where the molecules are defined, either using the `molecule` command or reading from a data/gsd file. Style must be `harmonic` or `fene`.
@@ -30,7 +37,7 @@ bond 3 fene 30.0 1.5
 ```
 
 
-#### boxLengths
+### boxLengths
 ``boxLengths [x-value y-value (optional)z-value]``
 
 List of float box lengths in each dimension. There should be one float for every dimension, and the units are in $b$.
@@ -40,7 +47,7 @@ boxLengths 25.0 25.0
 boxLengths 6.0 6.0 6.0
 ```
 
-#### datFileName
+### datFileName
 ``datFileName [string]``
 
 Name of the data file that stores the time step values, energies, etc
@@ -50,7 +57,7 @@ datFileName data.dat
 datFileName garbage.dat
 ```
 
-#### Dim
+### Dim
 ``Dim [integer value]``  
 
 Dimensionality of the simulation box. The code is only explicitly tested for 2 and 3 dimensions.
@@ -60,7 +67,7 @@ Dimensionality of the simulation box. The code is only explicitly tested for 2 a
 
 
 
-#### grid
+### grid
 `grid [x-value y-value (optional)z-value]`  
 
 List of integer number of grid points in each dimension. There should be one integer for every dimension.  
@@ -70,15 +77,37 @@ grid 225 225
 grid 63 63 63
 ```
 
-#### gsdFreq
+### gsdFreq
+`gsdFreq [integer value]`
 
-#### gsdName
-
-#### integrator
-
+Number of time steps between writes to gsd file.
 
 
-#### logFreq
+### gsdName
+`gsdName [string name]`
+
+Rename output gsd file to 'name'.
+
+
+### integrator
+`integrator [group name] [integrator name] [options]`
+
+Defines the integrator used during the time integration.
+
+Allowed integrator names: `GJF`, which uses the Gronbeck-Jensen and Farago [*Mol Phys* 2013] to discretize the Stoermer-Verlet algorithm.  
+
+Optional arguments:
+
+`delt [float value]`: size of time step to use. Default value 0.002.
+
+```
+integrator all GJF
+integrator all GJF delt 0.005
+```
+
+
+
+### logFreq
 `logFreq [value]`
 
 Number of iterations between writes to the log file.
@@ -87,11 +116,27 @@ Number of iterations between writes to the log file.
 logFreq 100
 ```
 
-#### MAXANGLES
+### MAXANGLES
+`MAXANGLES [int value]`
 
-#### MAXBONDS
+Maximum number of angles allowed on each particle. Should be defined before molecules are created.  
+Default value: 3
 
-#### molecule
+```
+MAXANGLES 9
+```
+
+### MAXBONDS
+`MAXBONDS [int value]`
+
+Maximum number of bonds allowed on each particle. Should be defined before molecules are created. Default value: 2
+
+```
+MAXBONDS 4
+```
+
+
+### molecule
 `molecule [architecture] [amount] [Number of blocks] [block 1 N, specices]  ... [optional args]`
 
 Add molecules to the simulation box of type 'architecture'. Multiple molecules can be added before the `endBox` command.
@@ -126,24 +171,42 @@ The second example makes ten diblock copolymer molecules with $N_{tot} = 40$ and
 
 The third example makes a triblock copolymer with $N_A=10, N_B=20,$ and $N_C=10$. The bond types for the A and C blocks are type 1, while those for the middle block are of type 2. The A-B junction will be defined with a type 1 bond, while the B-C junction will be defined as type 2.
 
-#### Nr
+### Nr
 `Nr [integer]`
 
 Reference chain length that will be used for some initialization tools that will be developed in the future.
 
-#### NSEXTRA
+### NSEXTRA
 
-#### pmeorder
+### pmeorder
 
-#### randSeed
+### potential
+`potential [style] [parameters]`
 
-#### rho0
+Defines a non-bonded potential, typically acting between two groups. See the [particle potentials](#ps-potentials) page for details.
+
+
+### randSeed
+`randSeed [int value]`
+
+Set the random number seed to `value` for *both* CPU and GPU random number generators.  
+
+Default value: set to the clock; this makes a different seed for each simulation that is started at different times.  
+
+NOTE: if one uses scripts to initialize many simulations and they all spawn and begin with rapid succession, you may end up with multiple jobs running with the same RNG seed.
+
+```
+randSeed 777
+```
+
+
+### rho0
 `rho0 [float]`
 
 Sets the monomer density used in some of the initialization routines.
 
 
-#### species
+### species
 `species [label] [optional arguments]`
 
 Label for the various species that will be simulated. In most contexts, species will be labeled 'A', 'B', etc, consistent with the notation used in most field-theoretic contexts. If a molecule is going to contain monomers of a given species, *the species must be defined before the molecule*.
@@ -167,10 +230,8 @@ species A mobility 1.0
 ```
 
 
-#### potential
-`potential [style] [group I] [group J] [parameters]`
 
-#### verbose
+### verbose
 `verbose [val]`
 
 Sets the code for the current box to be 'verbose' if val = 1, meaning tons of information will be printed to the screen about where the code is. This also enables some calls to cudaDeviceSynchronize(), which can be useful for debugging. This WILL slow the code down and the total number of steps run in this mode should be minimal. 
