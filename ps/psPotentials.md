@@ -1,10 +1,15 @@
 # PS Potentials
+$
+\newcommand{\mb}{\mathbf}
+\newcommand{\mc}{\mathcal}
+$
 
 ## Gaussian potential
-`potential gaussian [group I] [group J] [prefactor] [std deviation]`
+`potential gaussian [group I] [group J] [prefactor float] [std deviation float]`
 
 Imposes a Gaussian non-bonded potential between groups I and J of the form  
-$ U_{nb} = A\, \int d\mathbf{r} \int d\mathbf{r}' \, \rho_I(\mathbf{r}) \, u_G(\mathbf{r} - \mathbf{r}') \, \rho_J(\mathbf{r}')$  
+$ U_{nb} = \int d\mathbf{r} \int d\mathbf{r}' \, \rho_I(\mathbf{r}) \, u_G(|\mathbf{r} - \mathbf{r}'|) \, \rho_J(\mathbf{r}')$  
+with Gaussian potential $u_G(r) = A \left( \frac{1}{2\pi \sigma^2} \right)^{3/2} e^{-r^2/2\sigma^2}$. The prefactor is the value of $A$, and the standard deviation $\sigma$ controls the range of the potential. This potential has become a common way to 'smear' the delta functions that are commonly used in SCFT calculations to regularize the models, and the non-local potential gives rise to (weak) liquid-like correlations in the fluid. 
 
 
 
