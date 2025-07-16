@@ -7,12 +7,15 @@ chapters:
 - file: Overview
 - file: ps/particles
   sections:
+  - file: ps/potentials
   - file: ps/psKeywords
   - file: ps/psPotentials
 - file: fts/fts
   sections: 
   - file: fts/integration
   - file: fts/ftsKeywords
+  - file: fts/ftsMolecules
+  - file: fts/ftsPotentials
 - file: utils
 - file: publications
 # - file: markdown

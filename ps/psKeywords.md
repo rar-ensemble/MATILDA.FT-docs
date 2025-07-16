@@ -5,6 +5,9 @@ As with all simulations using this code, the first step is to define the box:
 
 Keywords for an PS box follow. Anything inside of square brackets represents an argument to be defined by the user.
 
+### angle
+
+
 ### blockSize
 `blockSize [int value]`
 
@@ -65,7 +68,25 @@ Dimensionality of the simulation box. The code is only explicitly tested for 2 a
 ``Dim 2``
 
 
+### endBox
+``endBox``
 
+Terminates the initialization of the current simulation box. The 'closing' argument of `box ps`
+
+
+### fieldFreq
+``fieldFreq [integer value]``
+
+Frequency of writing field data to the disk. 
+
+```
+fieldFreq 100
+```
+
+### doCharges
+``doCharges``
+
+Enables charges for reading from .data configuration file. This flag is not needed if using the `molecule` initializations.
 
 ### grid
 `grid [x-value y-value (optional)z-value]`  
@@ -87,6 +108,13 @@ Number of time steps between writes to gsd file.
 `gsdName [string name]`
 
 Rename output gsd file to 'name'.
+
+
+### initDataFileName
+`initDataFileName [string name]`
+
+Changes the name of the starting configuration data file name. Default: init.input.data.
+
 
 
 ### integrator
@@ -159,6 +187,9 @@ Each block is defined as the integer number of monomers followed by the species 
 \\
 NOTE: Bonds for a junction between blocks will be defined as the bond type of the lowest indexed block.
 
+`charge [charge on each block]`. Float values for the charge on each block. This will enable charges in the simulation and add charges to the written init.input.data configuration file.
+
+
 ```
 molecule linear phi 0.5 1 40 A xrange 0.0 25.0
 molecule linear nmolecs 10 2 20 A 20 B
@@ -200,6 +231,15 @@ randSeed 777
 ```
 
 
+### readData 
+`readData [string filename]`
+
+Reads a lammps-style input configuration. The expected format is angle-style, though the order and spacing of the data in the file is more rigid in this code than LAMMPS. 
+
+If charges are contained in the provided data file, `doCharges` must be given before readData.
+
+If additional molecules are to be added to the configuration provided in the data file using the `molecule` command, then readData must precede the `molecule` commands.
+
 ### rho0
 `rho0 [float]`
 
@@ -229,6 +269,17 @@ species B mass 2.0
 species A mobility 1.0
 ```
 
+### trajFileName
+`trajFileName [string name]`
+
+Change the name of the lammpstrj file to the given name. Default is traj.lammpstrj.
+
+
+
+### trajFreq
+`trajFreq [integer value]`
+
+Set the frequency for writing to the lammpstrj file. These files are much less efficient than the GSD format and should be used sparingly.
 
 
 ### verbose

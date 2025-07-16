@@ -71,15 +71,6 @@ logFreq 100
 
 
 
-## maxSteps
-`maxSteps [value]`
-
-Integer maximum total number of possible simulation steps to take in the calculation. SCFT simulations can terminate before performing `maxSteps` iterations if convergence criteria is reached.
-
-```
-maxSteps 7500
-```
-
 
 
 ## molecule
@@ -113,3 +104,57 @@ Label for the various species that will be simulated. In most contexts, species 
 species A
 species B
 ```
+
+
+## tolerance
+`tolerance [style] [tolerance value]`
+
+Tolerance used for convergence in an SCFT calculation. By default, this checks the change in the effective Hamiltonian, $\mathcal{H}$, between two print steps according to
+```c++
+if ( step % logFreq == 0 ) {
+    if ( fabs(Heff.real() - Hold.real()) < tolerance) {
+        break; // exits loop over steps
+    }
+    else {
+        Hold = Heff;
+    }
+} 
+```
+
+Other options are
+- `phi`: uses a maximum change in number fraction of a molecule as the tolerance. This only makes sense if there are components simulated in the $\mu$VT ensemble.
+- `density`: **[Not yet implemented]** Uses an integrated change in the density field of species [index] as the tolerance, involving the net change on the entire density grid. The maximum is taken over all density species.
+- `potential`: **[Not yet implemented]** Uses integrated change in the potential field of potential [index] as the tolerance, involving the net change on the entire density grid. The maximum is taken over all density species.
+
+In all options, the indices are counted from 1
+
+
+```
+tolerance Heff 1.0E-6
+tolerance phi 1.0E-4
+tolerance density 1.0E-4
+```
+
+An example using `phi` and including the molecule definitions in the input file:
+```
+species A
+species B
+molecule linear activity 1.0 1 40 A
+molecule linear activity 3.0 1 40 B
+tolerance phi 1.0E-5
+```
+In the above more detailed example, this wil look at the change in the number of monomers of both homopolymers for the tolerance. In other words,
+```c++
+if ( step % logFreq == 0 ) {
+
+    phi[i] = Molecs[i]->nSites / rho0 / V;   
+    
+    if ( fabs(phi[i] - phiOld[i]) > tolerance ) {
+        bool CONVERGED = false;
+    }
+
+    phiOld[i] = phi[i];
+    
+} 
+```
+It assumes the total number of monomers for the denominator to compute $\phi$ is $\rho_0 V$.
