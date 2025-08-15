@@ -20,4 +20,4 @@ The purpose of this code base is to be able to simulate using either field-theor
 
 ### Recent changes
 
-27 December 2023, FTS: Implemented Euler predictor-corrector method for field updates
+July 2025: MASSIVE overhaul to move to version 2.

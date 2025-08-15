@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: Overview
+- file: overview
 - file: ps/particles
   sections:
   - file: ps/potentials
