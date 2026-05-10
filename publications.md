@@ -4,5 +4,5 @@
 
 2. {cite}`jedlinska2023effect`
 
-```{bibliography} ./references.bib
+```{bibliography}
 ```

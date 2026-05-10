@@ -1,9 +1,5 @@
 # FTS Potentials
 
-$$
-\newcommand{\mb}{\mathbf}
-\newcommand{\mc}{\mathcal}
-$$
 
 
 ## Edwards potential

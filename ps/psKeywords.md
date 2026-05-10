@@ -189,6 +189,10 @@ NOTE: Bonds for a junction between blocks will be defined as the bond type of th
 
 `charge [charge on each block]`. Float values for the charge on each block. This will enable charges in the simulation and add charges to the written init.input.data configuration file.
 
+`angleType [list of integers]`. There must be one angleType specific for each block of the copolymer; by default, angles are disabled. Setting angleType to 0 will make that block fully flexible.
+\\
+In block polymers, the 'middle' particle of the three involved in the angle determines the angle type. For example, declaring a molecule using `molecule linear nmolecs 1 3 5 A 10 B 5 A angleType 0 1 0` will make an A-B-A, coil-rod-coil triblock copolymer with particles 1-5 and 16-20 as the two A blocks, and 6-15 defining the B blocks. Since particle 6 is part of the B block with the angle potential, there *will* be an angle involving the set of particles $\{5,6,7\}$ and $\{14,15,16\}$. Similarly, if instead this same molecule command were instead appended with `angleType 1 2 3`, then both sets $\{5,6,7\}$ and $\{14,15,16\}$ would use angleType 2, but the angle defined between $\{4,5,6\}$ would use angleType 1.
+
 
 ```
 molecule linear phi 0.5 1 40 A xrange 0.0 25.0
@@ -214,7 +218,7 @@ Reference chain length that will be used for some initialization tools that will
 ### potential
 `potential [style] [parameters]`
 
-Defines a non-bonded potential, typically acting between two groups. See the [particle potentials](#ps-potentials) page for details.
+Defines a non-bonded potential, typically acting between two groups. See the *particle potentials* page for details.
 
 
 ### randSeed

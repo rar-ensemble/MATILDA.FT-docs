@@ -1,5 +1,12 @@
 # Overview
 
+## Installation
+
+TBD.
+
+
+## Getting started
+
 All simulations require at least one input file to run. 
 
 ## Command-line options
@@ -33,7 +40,12 @@ The supported global commands are explained in the subsections below.
 ### run
 `run [string ensemble] [integer max steps]`
 
-ensemble can be NVT (ps or fts) or VT (fts only)
+ensemble can be NVT (ps or fts), VT (fts only), or findSpinodal (fts only)
+
+Options:  
+`NVT [integer max steps]`
+`VT [integer max steps]` (fts only, to allow $\mu$VT simulations)
+`findSpinodal [options]` (fts only, options include phiTolerance, fScale, molecule, nSteps, initial_f)
 
 ### modify
 
