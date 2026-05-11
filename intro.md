@@ -9,6 +9,8 @@ It does not go in-depth into any particular topic - check out [the Jupyter Book 
 
 This software was originally published in the [Journal of Chemical Physics](https://doi.org/10.1063/5.0145006) in 2023, and the updated source code is maintained on [Github](https://www.github.com/rar-ensemble/MATILDA.FT). This is an in-progress set of documentation for the code.
 
+***THIS DOCUMENTATION HAS NOT BEEN FULLY VETTED FOR PUBLIC USE AND MAY CONTAIN INACCURACIES***
+
 $$
 \mathcal{Z} = z_0 \int d\mathbf{r}^n \; e^{-\beta U(\mathbf r^n)} = z_1 \int \mathcal{D} \{w\} \; e^{-\mathcal{H}}
 $$
