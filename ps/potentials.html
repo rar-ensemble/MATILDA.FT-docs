@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PS Potentials &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ps/potentials';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Publications using this software:" href="../publications.html" />
+    <link rel="prev" title="PS Molecules" href="psMolecules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MATILDA.FT - Mesoscale simulations of soft matter systems
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utilities and post-processing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fts/fts.html">Field-Theoretic Simulations (FTS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsKeywords.html">FTS input file keywords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsMolecules.html">FTS Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsPotentials.html">FTS Potentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/integration.html">Integration schemes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="particles.html">Particle-based simulations (PS)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="psKeywords.html">PS input file keywords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psMolecules.html">PS Molecules</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">PS Potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using this software:</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ps/potentials.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PS Potentials</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-notes-about-potentials">Overall notes about potentials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-potentials">Pair potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smearing-and-pair-potentials">Smearing and pair potentials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-potential">Gaussian potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charges-and-electrostatics">Charges and electrostatics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-notes">Implementation notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maier-saupe-potential-in-progress">Maier-Saupe potential (in progress)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation notes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erf2-potential-in-progress">erf2 potential (in progress)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erfg-potential-in-progress">erfG potential (in progress)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ps-potentials">
+<h1>PS Potentials<a class="headerlink" href="#ps-potentials" title="Link to this heading">#</a></h1>
+<section id="overall-notes-about-potentials">
+<h2>Overall notes about potentials<a class="headerlink" href="#overall-notes-about-potentials" title="Link to this heading">#</a></h2>
+<section id="pair-potentials">
+<h3>Pair potentials<a class="headerlink" href="#pair-potentials" title="Link to this heading">#</a></h3>
+<p>If potentials act between the same group (e.g., through a Helfand potential where <span class="math notranslate nohighlight">\(U = \frac{\kappa}{2\rho_0} \int d{\mathbf r} \int d\mathbf{r}' \, \rho_+(\mathbf{r}) \, u_G(\mathbf{r}-\mathbf{r}') \, \rho_+(\mathbf{r}')\)</span>) with <span class="math notranslate nohighlight">\(u_G\)</span> a unit Gaussian, then the force is accumulated twice in the ps_potentials.cu calcForces() routine. If such a ‘self’-interacting potential is used, take care when defining the prefactor such that it includes the factor of 1/2.</p>
+</section>
+<section id="smearing-and-pair-potentials">
+<h3>Smearing and pair potentials<a class="headerlink" href="#smearing-and-pair-potentials" title="Link to this heading">#</a></h3>
+<p>While full details can be found in the literature (Koski et al. J. Chem. Phys. 2013; Villet et al., J. Chem. Phys. 2014), some of the ‘unusual’ pair potentials included herein derive from the smearing functions used in field-theoretic simulations (FTS), a brief explainer is provided here. The microscopic density can be written as <span class="math notranslate nohighlight">\(\hat \rho_I(\mathbf r) = \sum_i \delta(\mathbf r - \mathbf r_i)\)</span>, where the particle centers are marked using Dirac delta functions. If the ‘mass’ of the particle is instead spread out over a finite range described by the function <span class="math notranslate nohighlight">\(h_I(\mathbf r)\)</span>, then the ‘smeared’ particle density can be written as<br />
+<span class="math notranslate nohighlight">\(
+\breve \rho_I(\mathbf r) = \sum_i h_I(\mathbf r - \mathbf r_i) = \int d\mathbf r' \; h_I(\mathbf r - \mathbf r') \, \hat \rho(\mathbf r') = [h_I \ast \hat\rho_I](\mathbf r)
+\)</span><br />
+where the last equality introduces our short-hand notation for a convolution integral.</p>
+<p>Many field-theoretic simulations use purely local, Delta function interaction potentials of the form <span class="math notranslate nohighlight">\(u(r) = A \, \delta(r)\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the amplitude of the potential. For a model that uses such a potential but <em>smeared</em> particle densities, the potential energy would be<br />
+<span class="math notranslate nohighlight">\(
+\begin{alignat}{1}
+    \beta U &amp;= A \int d\mathbf r \int d\mathbf r'\; \breve\rho(\mathbf r) \, \delta(|\mathbf r - \mathbf r'|) \, \breve\rho(\mathbf r')
+    \\
+    &amp;= \int d\mathbf r \int d\mathbf r'\; \hat \rho(\mathbf r) \, u_{IJ}(|\mathbf r - \mathbf r'|) \, \hat \rho(\mathbf r')
+\end{alignat}
+\)</span><br />
+where in the second line we have restored the delta function densities <span class="math notranslate nohighlight">\(\hat \rho_I, \hat \rho_J\)</span> but now have a non-local pair potential <span class="math notranslate nohighlight">\(u_{IJ}(r) = A [h_I \ast h_J](r)\)</span>.</p>
+<p>To preserve the equivalence between FTS and particle simulations (PS), we often use pair potentials derived from the smearing functions commonly used in FTS. For the ubiquitous Gaussian-smearing function, one finds <span class="math notranslate nohighlight">\(u_{IJ}(r) = A\, \left( \frac{1}{2\pi \sigma^2} \right)^{3/2} e^{-r^2/2(\sigma_I^2 + \sigma_J^2)}\)</span>.</p>
+<p>The two other primary potentials we have implemented derive from our work with field-theoretic simulations of polymer nanocomposites where the nanoparticles are smeared with a error function as <span class="math notranslate nohighlight">\(h_{N}(\mathbf r) = \frac{\rho_0}{2} \textrm{erfc}\left( \frac{|\mathbf r| - R_P}{\xi}\right)\)</span>, where <span class="math notranslate nohighlight">\(\rho_0\)</span> is the bulk density in the center of the nanoparticle, <span class="math notranslate nohighlight">\(R_P\)</span> is the nanoparticle radius, and <span class="math notranslate nohighlight">\(\xi\)</span> is the breadth of the particle interface where the density of the particle transitions from <span class="math notranslate nohighlight">\(\rho_0\)</span> to 0. The <code class="docutils literal notranslate"><span class="pre">erf2</span></code> potential described below represents the convolution of two nanoparticle smearing functions with potentially two distinct particle sizes <span class="math notranslate nohighlight">\(R_P\)</span> and interfacial widths <span class="math notranslate nohighlight">\(\xi\)</span>, which is meant to regularize but still capture excluded volume interactions between the particles. Similarly, the <code class="docutils literal notranslate"><span class="pre">erfG</span></code> potential is the convolution of a nanoparticle <span class="math notranslate nohighlight">\(h(r)\)</span> with a Gaussian and is used to capture interactions between NPs and polymer monomers.</p>
+</section>
+</section>
+<section id="gaussian-potential">
+<h2>Gaussian potential<a class="headerlink" href="#gaussian-potential" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">potential</span> <span class="pre">gaussian</span> <span class="pre">[group</span> <span class="pre">I]</span> <span class="pre">[group</span> <span class="pre">J]</span> <span class="pre">[prefactor</span> <span class="pre">float]</span> <span class="pre">[std</span> <span class="pre">deviation</span> <span class="pre">float]</span></code></p>
+<p>Imposes a Gaussian non-bonded potential between groups I and J of the form<br />
+<span class="math notranslate nohighlight">\( U_{nb} = \int d\mathbf{r} \int d\mathbf{r}' \, \rho_I(\mathbf{r}) \, u_G(|\mathbf{r} - \mathbf{r}'|) \, \rho_J(\mathbf{r}')\)</span><br />
+with Gaussian potential <span class="math notranslate nohighlight">\(u_G(r) = A \left( \frac{1}{2\pi \sigma^2} \right)^{\mathbb{D}/2} e^{-r^2/2\sigma^2}\)</span>. The prefactor is the value of <span class="math notranslate nohighlight">\(A\)</span>, and the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> controls the range of the potential. This potential has become a common way to ‘smear’ the delta functions that are commonly used in SCFT calculations to regularize the models, and the non-local potential gives rise to (weak) liquid-like correlations in the fluid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">erf</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="mf">3.14159</span><span class="o">*</span><span class="mf">1.0</span><span class="p">)</span><span class="o">**-</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Unit Gaussian potential&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;u(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6e4c8cacc52b3425e6e1e819fdafa34710526cdbee48c83f5b0188bcb0c7b62d.png" src="../_images/6e4c8cacc52b3425e6e1e819fdafa34710526cdbee48c83f5b0188bcb0c7b62d.png" />
+</div>
+</div>
+</section>
+<section id="charges-and-electrostatics">
+<h2>Charges and electrostatics<a class="headerlink" href="#charges-and-electrostatics" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">potential</span> <span class="pre">charges</span> <span class="pre">[Bjerrum</span> <span class="pre">float]</span> <span class="pre">[sigmaq</span> <span class="pre">float]</span></code></p>
+<p>Enables calculation of electrostatic interactions using floats <span class="math notranslate nohighlight">\(l_B\)</span>, the Bjerrum length, and <span class="math notranslate nohighlight">\(\sigma_q\)</span> the charge smearing length.</p>
+<p>Charge interactions assume the charges are distributed over a unit Gaussian centered at the particle middle, so that the charge density is taken as <span class="math notranslate nohighlight">\(\breve \rho_c(\mathbf r) = \sum_i q_i \, h_G(\mathbf r - \mathbf r_i)\)</span>, with <span class="math notranslate nohighlight">\(h_G(\mathbf r)\)</span> a unit Gaussian in the appropriate number of dimensions with standard deviation <span class="math notranslate nohighlight">\(\sigma_q\)</span>.  The electrostatic interaction potential and forces are then computed by solving Poisson’s equation,<br />
+$<span class="math notranslate nohighlight">\(
+\nabla^2 \phi = -4\pi l_B \breve\rho_c,
+\)</span><span class="math notranslate nohighlight">\(  
+which is readily solved using Fourier transforms. Here, \)</span>\phi(\mathbf r)<span class="math notranslate nohighlight">\( is the electrostatic potential, \)</span>\mathbf{E} = -\nabla \phi<span class="math notranslate nohighlight">\( is the electric field, and \)</span>l_B<span class="math notranslate nohighlight">\( is the Bjerrum length. The electrostatic energy is then computed as
+\)</span><span class="math notranslate nohighlight">\(
+U_{q} = \frac 1 2 \int d\mathbf {r} \; \breve \rho(\mathbf r) \, \phi(\mathbf r).
+\)</span>$</p>
+<p>Note that the above implementation is <em>exactly</em> the same as the k-space part of the common Ewald summation used in particle simulations. The effective pair potential is regularized as <span class="math notranslate nohighlight">\(r\rightarrow 0^+\)</span> and is compared to the standard Coulomb potential in the figure below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.00001</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">sig1</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">sig2</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">erf</span><span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">sig1</span><span class="p">)</span><span class="o">/</span><span class="n">r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Regularized, $\sigma_c = 1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">erf</span><span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">sig2</span><span class="p">)</span><span class="o">/</span><span class="n">r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Regularized, $\sigma_c=0.25$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Coulomb&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Standard vs. Regularized Coulomb potential&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d5a09e5895ffa7af88e78d9a1efb4419c4c8e12434e29bab53e9a731cdd3ab70.png" src="../_images/d5a09e5895ffa7af88e78d9a1efb4419c4c8e12434e29bab53e9a731cdd3ab70.png" />
+</div>
+</div>
+<section id="implementation-notes">
+<h3>Implementation notes<a class="headerlink" href="#implementation-notes" title="Link to this heading">#</a></h3>
+<p>The Poisson equation is solved in Fourier space, where the convolution of the point charge density with <span class="math notranslate nohighlight">\(h_G(\mathbf r)\)</span> becomes a product, <span class="math notranslate nohighlight">\(\phi_k = \frac{4 \pi l_B}{k^2} \rho_c(k) \,  h_G(k)\)</span> for <span class="math notranslate nohighlight">\(|k| \neq 0\)</span> and with <span class="math notranslate nohighlight">\(\rho_c(k)\)</span> the Fourier transform of the point charge density. Since evaluating <span class="math notranslate nohighlight">\(U_q\)</span> requires multiplying again by <span class="math notranslate nohighlight">\(\breve \rho_c(k)\)</span>, the smeared charge density, <span class="math notranslate nohighlight">\(U_q\)</span> is precomputed with <span class="math notranslate nohighlight">\(h_G(k)^2\)</span>. Similar rationale applies for mapping the force back to the particles,
+$<span class="math notranslate nohighlight">\(
+\mathbf f_i = \int d\mathbf r \; h_G(\mathbf r- \mathbf r_i) \, \mathbf E(\mathbf r),
+\)</span><span class="math notranslate nohighlight">\(
+so this step of Gaussian smearing is also contained in the precomputed factor of \)</span>h_G(k)^2$.</p>
+<p>The pre-computed k-space terms are invariant during the simulations that do not change (assuming constant box dimensions), and they are computed during initialization as
+$<span class="math notranslate nohighlight">\(
+\psi(k) = \frac{4\pi l_B}{k^2} \, h_G(k)^2    \;\;\; \forall \; |k| \neq 0,
+\)</span><span class="math notranslate nohighlight">\(
+and
+\)</span><span class="math notranslate nohighlight">\(
+-\mathbf \nabla \psi(r) = \mathcal{F}^{-1}[-i \mathbf k \psi(k)].
+\)</span>$</p>
+<p>If <span class="math notranslate nohighlight">\(\hat \rho_c(k)\)</span> is the Fourier transform of the point particle density, then the operations to compute the energy are to compute
+$<span class="math notranslate nohighlight">\(
+g(k) &amp;= \psi(k) \, \hat\rho_c(k),  
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+g(\mathbf r) = \mathcal{F}^{-1}[g(k)],  
+\)</span><span class="math notranslate nohighlight">\(
+and
+\)</span><span class="math notranslate nohighlight">\(
+U_{q} = \frac{1}{2} \int d\mathbf r \; g(\mathbf r) \, \hat \rho_c(\mathbf r).  
+\)</span><span class="math notranslate nohighlight">\(
+Similarly, the force on particle *i* is given by  
+\)</span><span class="math notranslate nohighlight">\(
+\mathbf f_i(\mathbf r) = q_i \int d\mathbf r \, \left[ -\mathbf \nabla g(\mathbf r) \right] \delta (\mathbf r - \mathbf r_i) .  
+\)</span><span class="math notranslate nohighlight">\(
+Note \)</span>\psi(r) \neq \phi(r)<span class="math notranslate nohighlight">\( due to the extra convolution with \)</span>h_G(r)<span class="math notranslate nohighlight">\( (similar for the electric field, \)</span>\mathbf E(r)$).</p>
+<p>These initialization steps are taken in <code class="docutils literal notranslate"><span class="pre">ps_potentialCharges.cu</span></code> in the function <code class="docutils literal notranslate"><span class="pre">NBCharge::initializePotential()</span></code>.</p>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h3>
+<p>The old version 1 of the code base did not have the extra convolution included, so the new code must be run with <span class="math notranslate nohighlight">\(\sigma_{c,new} = \sigma_{c,old}/\sqrt{2}\)</span> to obtain matching energies.</p>
+</section>
+</section>
+<section id="maier-saupe-potential-in-progress">
+<h2>Maier-Saupe potential (in progress)<a class="headerlink" href="#maier-saupe-potential-in-progress" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">potential</span> <span class="pre">maier</span> <span class="pre">[group</span> <span class="pre">I]</span> <span class="pre">[group</span> <span class="pre">I]</span> <span class="pre">[prefactor</span> <span class="pre">float]</span> <span class="pre">[sigma</span> <span class="pre">float]</span> <span class="pre">[lc</span> <span class="pre">input</span> <span class="pre">filename]</span> </code></p>
+<p>Imposes a Maier-Saupe orientation potential between particles in group I. The potential is non-local using a unit Gaussian and with amplitude <code class="docutils literal notranslate"><span class="pre">prefactor</span></code> and standard deviation <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p>
+<p>The total potential energy is given by the form adopted from Pryamitsyn and Ganesan</p>
+<div class="math notranslate nohighlight">
+\[
+\beta U_{ms} = -\frac{A_0}{2} \int d\mathbf{r} \int d\mathbf{r}' \, \mathbf{S}(\mathbf{r}):\mathbf{S}(\mathbf{r}')  \; u_G(|\mathbf{r} - \mathbf{r}'|)  
+\]</div>
+<p>Note the prefactor is <em>negative</em>, so the typical use case will provide a positive prefactor (<span class="math notranslate nohighlight">\(A_0 &gt; 0\)</span>) to promote alignment of the molecules in group <span class="math notranslate nohighlight">\(I\)</span>.</p>
+<p>The tensor field <span class="math notranslate nohighlight">\(\mathbf{S}(\mathbf{r})\)</span> is constructed from the particle positions as<br />
+<span class="math notranslate nohighlight">\(\mathbf{S}(\mathbf{r}) = \sum_{i \in I} \mathbf{S}_i \, \delta(\mathbf{r} - \mathbf{r}_i)\)</span><br />
+where <span class="math notranslate nohighlight">\(\mathbf{S}_i = (\mathbf{u}_i \mathbf u_i - \frac{\mathcal{I}}{\mathbb{D}})\)</span> is a rank 2 tensor that defines the orientation of the molecules involved, <span class="math notranslate nohighlight">\(\mathbf{u}_i = \mathbf{r}_{ij} / |\mathbf{r}_{ij}|\)</span> is the unit vector defining the orientation vector associated with particle <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> is an identity tensor with <span class="math notranslate nohighlight">\(\mathbb{D}\)</span> the dimensionality of the system. The orientation vector depends on the position of a ‘partner’ particle <span class="math notranslate nohighlight">\(j\)</span>, which is defined during initialization in <code class="docutils literal notranslate"><span class="pre">lc.input</span></code>.</p>
+<section id="id1">
+<h3>Implementation notes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The force is obtained through explicit differentiation with respect to the positions of particles <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, similar to the isotropic pair potentials, though there are two significant contributions to the force for the Maier-Saupe form. First, there is the <span class="math notranslate nohighlight">\(\nabla u_G\)</span> contribution <span class="math notranslate nohighlight">\(\mathbf{f}_{i,1}\)</span>,<br />
+$<span class="math notranslate nohighlight">\(
+\mathbf{f}_{i,1}(\mathbf{r}) = A_0 \int d\mathbf{r}' \, \delta(\mathbf{r} - \mathbf{r}_i)\,  \mathbf{S}_i : \mathbf{S}(\mathbf{r}') \nabla u_G(\mathbf{r} - \mathbf{r}').  
+\)</span>$<br />
+This contribution is mapped onto particle coordinates using a spline particle-to-mesh scheme as per usual.</p>
+<p>The second contribution arises from <span class="math notranslate nohighlight">\(\partial \mathbf{S}(r) / \partial \mathbf{r}_i\)</span> and is given by<br />
+$<span class="math notranslate nohighlight">\(  
+\mathbf{f}_{i,2}(\mathbf{r}) = A_0 \int d\mathbf{r}' \, \delta(\mathbf{r} - \mathbf{r}_i)\,  \left[ (\mathcal{I}\mathbf{u}_i + \mathbf{u}_i \mathcal{I}) \cdot \frac{\partial \mathbf{u}_{i}}{\partial \mathbf{r}_i} \right]: \mathbf{S}(\mathbf{r}') u_G(\mathbf{r} - \mathbf{r}')  
+\)</span><span class="math notranslate nohighlight">\(
+This can be written with less ambiguity in indicial notation as  
+\)</span><span class="math notranslate nohighlight">\(
+f_{i,2,\alpha}(\mathbf r) = A_0 \int d\mathbf{r}'\, \delta(\mathbf{r}-\mathbf{r}_i)\left(\frac{\partial u_{i,\mu}}{\partial r_{i,\alpha}} u_{i,\nu} + u_{i,\mu} \frac{\partial u_{i,\nu}}{\partial r_{i,\alpha}}\right) S_{\mu\nu}(\mathbf{r}')\, u_G(\mathbf{r}-\mathbf{r}'),  
+\)</span><span class="math notranslate nohighlight">\(  
+where the sum over repeated indices \)</span>\mu<span class="math notranslate nohighlight">\( and \)</span>\nu<span class="math notranslate nohighlight">\( is implied. The total force on particle *i* from this potential is then \)</span>\mathbf{f}<em>i = \mathbf{f}</em>{i,1} + \mathbf{f}<em>{i,2}<span class="math notranslate nohighlight">\(, and the contribution to the force on particle \)</span>j<span class="math notranslate nohighlight">\( is \)</span>\mathbf f_j = -\mathbf f</em>{i,2}$.</p>
+</section>
+</section>
+<section id="erf2-potential-in-progress">
+<h2>erf2 potential (in progress)<a class="headerlink" href="#erf2-potential-in-progress" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">potential</span> <span class="pre">erf2</span> <span class="pre">[group</span> <span class="pre">I]</span> <span class="pre">[group</span> <span class="pre">J]</span> <span class="pre">[prefactor</span> <span class="pre">float]</span> <span class="pre">[Rp1</span> <span class="pre">float]</span> <span class="pre">[xi1</span> <span class="pre">float]</span> <span class="pre">[Rp2</span> <span class="pre">float]</span> <span class="pre">[xi2</span> <span class="pre">float]</span></code></p>
+<p>Imposes a non-bonded potential between groups I and J of the form<br />
+<span class="math notranslate nohighlight">\( U_{erf2} = [h_I \ast h_J](\mathbf r)\)</span><br />
+where <span class="math notranslate nohighlight">\(h_I(\mathbf r)\)</span> and <span class="math notranslate nohighlight">\(h_J(\mathbf r)\)</span> are nanoparticle smearing functions defined as <span class="math notranslate nohighlight">\(h_I(\mathbf r) = \frac{\rho_0}{2} \textrm{erfc}\left( \frac{|\mathbf r| - R_I}{\xi_I}\right)\)</span> and <span class="math notranslate nohighlight">\(R_I, \xi_I\)</span> are the radius and smearing length of nanoparticle type <span class="math notranslate nohighlight">\(I\)</span>.</p>
+<!---
+A 1D sample of the potential and its form is shown below, and one should note that the potential is *extensive* in the nanoparticle volume. Care should be taken in the choice of the amplitude $A$ to provide sufficiently strong excluded volume effects and not so large that numerical integration becomes unstable.
+-->
+<p>Each <span class="math notranslate nohighlight">\(h_I\)</span> is defined in Fourier space as a convolution of a spherical step function with a Gaussian, <span class="math notranslate nohighlight">\(h(k) = \frac{\rho_0}{2} e^{-k^2 \xi_I^2/2} \, S_I(k)\)</span> with <span class="math notranslate nohighlight">\(S_I(k) = \frac{4\pi}{k^3} \left[ \sin(R_{pI}k) - R_{pI}k \cos(R_{pI}k)\right]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">erf</span>
+<span class="n">Rp1</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">;</span>
+<span class="n">xi1</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="n">Rp2</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="n">xi2</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">rho0</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">10.</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">V</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="n">rho0</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">erf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">-</span><span class="n">Rp1</span><span class="p">)</span><span class="o">/</span><span class="n">xi1</span><span class="p">))</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="n">rho0</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">erf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">-</span><span class="n">Rp2</span><span class="p">)</span><span class="o">/</span><span class="n">xi2</span><span class="p">))</span>
+
+<span class="n">hft1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">h1</span><span class="p">);</span>
+<span class="n">hft2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">h2</span><span class="p">);</span>
+<span class="n">uft</span> <span class="o">=</span> <span class="n">hft1</span><span class="o">*</span><span class="n">hft2</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">uft</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span> <span class="o">/</span> <span class="n">M</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">u</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">M</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span><span class="n">M</span><span class="p">],</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">M</span><span class="o">/</span><span class="mi">2</span><span class="p">)]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Nanoparticle-nanoparticle potential&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">h1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h_1$(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h_2$(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;u(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/508d30712e7c980cead4dc1d327e5a19e36fe8b10d5d0d9543996e57b4229fe9.png" src="../_images/508d30712e7c980cead4dc1d327e5a19e36fe8b10d5d0d9543996e57b4229fe9.png" />
+</div>
+</div>
+</section>
+<section id="erfg-potential-in-progress">
+<h2>erfG potential (in progress)<a class="headerlink" href="#erfg-potential-in-progress" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">potential</span> <span class="pre">erfG</span> <span class="pre">[group</span> <span class="pre">I]</span> <span class="pre">[group</span> <span class="pre">J]</span> <span class="pre">[prefactor</span> <span class="pre">float]</span> <span class="pre">[Rp</span> <span class="pre">float]</span> <span class="pre">[xi</span> <span class="pre">float]</span> <span class="pre">[sigma</span> <span class="pre">float]</span></code></p>
+<p>Imposes a non-bonded potential between groups I and J of the form<br />
+<span class="math notranslate nohighlight">\( U_{erfG} = [h_I \ast h_J](\mathbf r)\)</span><br />
+where <span class="math notranslate nohighlight">\(h_I(\mathbf r)\)</span> is a nanoparticle smearing function defined as <span class="math notranslate nohighlight">\(h_I(\mathbf r) = \frac{\rho_0}{2} \textrm{erfc}\left( \frac{|\mathbf r| - R_I}{\xi_I}\right)\)</span> and <span class="math notranslate nohighlight">\(R_I, \xi_I\)</span> are the radius and smearing length of nanoparticle type <span class="math notranslate nohighlight">\(I\)</span>, and <span class="math notranslate nohighlight">\(h_J\)</span> is a unit Gaussian distribution with variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. A 1D sample of the potential and its form is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">erf</span>
+<span class="n">Rp</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">;</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">rho0</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">250</span><span class="p">;</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">10.</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">V</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="n">rho0</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">erf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">-</span><span class="n">Rp</span><span class="p">)</span><span class="o">/</span><span class="n">xi</span><span class="p">))</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">hft1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">h1</span><span class="p">);</span>
+<span class="n">hft2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">h2</span><span class="p">);</span>
+<span class="n">uft</span> <span class="o">=</span> <span class="n">hft1</span><span class="o">*</span><span class="n">hft2</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">uft</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span> <span class="o">/</span> <span class="n">M</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">u</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">M</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span><span class="n">M</span><span class="p">],</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">M</span><span class="o">/</span><span class="mi">2</span><span class="p">)]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Nanoparticle-Gaussian potential&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">h1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h_1$(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">h2</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h_2$(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;u(r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/850afd546bb5c3250831e9e9d4f9b780609a6ad8ee1b12435a8a93206ab8f141.png" src="../_images/850afd546bb5c3250831e9e9d4f9b780609a6ad8ee1b12435a8a93206ab8f141.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ps"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="psMolecules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PS Molecules</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../publications.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publications using this software:</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-notes-about-potentials">Overall notes about potentials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-potentials">Pair potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smearing-and-pair-potentials">Smearing and pair potentials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-potential">Gaussian potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charges-and-electrostatics">Charges and electrostatics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-notes">Implementation notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maier-saupe-potential-in-progress">Maier-Saupe potential (in progress)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation notes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erf2-potential-in-progress">erf2 potential (in progress)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erfg-potential-in-progress">erfG potential (in progress)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

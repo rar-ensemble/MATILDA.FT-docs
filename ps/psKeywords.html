@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PS input file keywords &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ps/psKeywords';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS Molecules" href="psMolecules.html" />
+    <link rel="prev" title="Particle-based simulations (PS)" href="particles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MATILDA.FT - Mesoscale simulations of soft matter systems
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utilities and post-processing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fts/fts.html">Field-Theoretic Simulations (FTS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsKeywords.html">FTS input file keywords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsMolecules.html">FTS Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsPotentials.html">FTS Potentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/integration.html">Integration schemes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="particles.html">Particle-based simulations (PS)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">PS input file keywords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psMolecules.html">PS Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html">PS Potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using this software:</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ps/psKeywords.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PS input file keywords</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angle">angle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blocksize">blockSize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bond">bond</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxlengths">boxLengths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datfilename">datFileName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dim">Dim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endbox">endBox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fieldfreq">fieldFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docharges">doCharges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grid">grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gsdfreq">gsdFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gsdname">gsdName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initdatafilename">initDataFileName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrator">integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logfreq">logFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxangles">MAXANGLES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxbonds">MAXBONDS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecule">molecule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nr">Nr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nsextra">NSEXTRA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pmeorder">pmeorder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential">potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randseed">randSeed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readdata">readData</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho0">rho0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#species">species</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajfilename">trajFileName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajfreq">trajFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbose">verbose</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ps-input-file-keywords">
+<h1>PS input file keywords<a class="headerlink" href="#ps-input-file-keywords" title="Link to this heading">#</a></h1>
+<p>As with all simulations using this code, the first step is to define the box:
+<code class="docutils literal notranslate"><span class="pre">box</span> <span class="pre">ps</span></code></p>
+<p>Keywords for an PS box follow. Anything inside of square brackets represents an argument to be defined by the user.</p>
+<section id="angle">
+<h2>angle<a class="headerlink" href="#angle" title="Link to this heading">#</a></h2>
+</section>
+<section id="blocksize">
+<h2>blockSize<a class="headerlink" href="#blocksize" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">blockSize</span> <span class="pre">[int</span> <span class="pre">value]</span></code></p>
+<p>Number of GPU threads within a threadblock on the GPU. Typical values are in the range of 128 - 512.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blockSize</span> <span class="mi">256</span>
+</pre></div>
+</div>
+</section>
+<section id="bond">
+<h2>bond<a class="headerlink" href="#bond" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">bond</span> <span class="pre">[bond</span> <span class="pre">type</span> <span class="pre">integer]</span> <span class="pre">[style]</span> <span class="pre">[parameters]</span></code></p>
+<p>Defines parameters for each bond style used in the simulation. The <code class="docutils literal notranslate"><span class="pre">bond</span> <span class="pre">type</span> <span class="pre">integer</span></code> must match the molecule definitions where the molecules are defined, either using the <code class="docutils literal notranslate"><span class="pre">molecule</span></code> command or reading from a data/gsd file. Style must be <code class="docutils literal notranslate"><span class="pre">harmonic</span></code> or <code class="docutils literal notranslate"><span class="pre">fene</span></code>.</p>
+<p>Style options and parameters:</p>
+<p><code class="docutils literal notranslate"><span class="pre">harmonic</span> <span class="pre">[spring</span> <span class="pre">constant]</span> <span class="pre">[equil</span> <span class="pre">dist]</span></code></p>
+<p>Uses a potential <span class="math notranslate nohighlight">\(u(\mathbf{r}_{ij}) = k \; (|\mathbf{r}_{ij}|-r_0)^2\)</span> where <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(r_0\)</span> are the force constant and equilibrium distance, respectively.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fene</span> <span class="pre">[prefactor]</span> <span class="pre">[maximum</span> <span class="pre">distance]</span></code></p>
+<p>Uses a potential <span class="math notranslate nohighlight">\(u(\mathbf{r}_{ij}) = - k\; r_{max}^2 \log \left[ 1-(|\mathbf{r}_{ij}|/r_{max})^2 \right]\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bond</span> <span class="mi">1</span> <span class="n">harmonic</span> <span class="mf">1.5</span> <span class="mf">0.0</span>
+<span class="n">bond</span> <span class="mi">2</span> <span class="n">harmonic</span> <span class="mi">500</span> <span class="mf">1.0</span>
+<span class="n">bond</span> <span class="mi">3</span> <span class="n">fene</span> <span class="mf">30.0</span> <span class="mf">1.5</span>
+</pre></div>
+</div>
+</section>
+<section id="boxlengths">
+<h2>boxLengths<a class="headerlink" href="#boxlengths" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">boxLengths</span> <span class="pre">[x-value</span> <span class="pre">y-value</span> <span class="pre">(optional)z-value]</span></code></p>
+<p>List of float box lengths in each dimension. There should be one float for every dimension, and the units are in <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">boxLengths</span> <span class="mf">25.0</span> <span class="mf">25.0</span>
+<span class="n">boxLengths</span> <span class="mf">6.0</span> <span class="mf">6.0</span> <span class="mf">6.0</span>
+</pre></div>
+</div>
+</section>
+<section id="datfilename">
+<h2>datFileName<a class="headerlink" href="#datfilename" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">datFileName</span> <span class="pre">[string]</span></code></p>
+<p>Name of the data file that stores the time step values, energies, etc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">datFileName</span> <span class="n">data</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">datFileName</span> <span class="n">garbage</span><span class="o">.</span><span class="n">dat</span>
+</pre></div>
+</div>
+</section>
+<section id="dim">
+<h2>Dim<a class="headerlink" href="#dim" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Dim</span> <span class="pre">[integer</span> <span class="pre">value]</span></code></p>
+<p>Dimensionality of the simulation box. The code is only explicitly tested for 2 and 3 dimensions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Dim</span> <span class="pre">2</span></code></p>
+</section>
+<section id="endbox">
+<h2>endBox<a class="headerlink" href="#endbox" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">endBox</span></code></p>
+<p>Terminates the initialization of the current simulation box. The ‘closing’ argument of <code class="docutils literal notranslate"><span class="pre">box</span> <span class="pre">ps</span></code></p>
+</section>
+<section id="fieldfreq">
+<h2>fieldFreq<a class="headerlink" href="#fieldfreq" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">fieldFreq</span> <span class="pre">[integer</span> <span class="pre">value]</span></code></p>
+<p>Frequency of writing field data to the disk.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fieldFreq</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</section>
+<section id="docharges">
+<h2>doCharges<a class="headerlink" href="#docharges" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">doCharges</span></code></p>
+<p>Enables charges for reading from .data configuration file. This flag is not needed if using the <code class="docutils literal notranslate"><span class="pre">molecule</span></code> initializations.</p>
+</section>
+<section id="grid">
+<h2>grid<a class="headerlink" href="#grid" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">grid</span> <span class="pre">[x-value</span> <span class="pre">y-value</span> <span class="pre">(optional)z-value]</span></code></p>
+<p>List of integer number of grid points in each dimension. There should be one integer for every dimension.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="mi">225</span> <span class="mi">225</span>
+<span class="n">grid</span> <span class="mi">63</span> <span class="mi">63</span> <span class="mi">63</span>
+</pre></div>
+</div>
+</section>
+<section id="gsdfreq">
+<h2>gsdFreq<a class="headerlink" href="#gsdfreq" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">gsdFreq</span> <span class="pre">[integer</span> <span class="pre">value]</span></code></p>
+<p>Number of time steps between writes to gsd file.</p>
+</section>
+<section id="gsdname">
+<h2>gsdName<a class="headerlink" href="#gsdname" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">gsdName</span> <span class="pre">[string</span> <span class="pre">name]</span></code></p>
+<p>Rename output gsd file to ‘name’.</p>
+</section>
+<section id="initdatafilename">
+<h2>initDataFileName<a class="headerlink" href="#initdatafilename" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">initDataFileName</span> <span class="pre">[string</span> <span class="pre">name]</span></code></p>
+<p>Changes the name of the starting configuration data file name. Default: init.input.data.</p>
+</section>
+<section id="integrator">
+<h2>integrator<a class="headerlink" href="#integrator" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">integrator</span> <span class="pre">[group</span> <span class="pre">name]</span> <span class="pre">[integrator</span> <span class="pre">name]</span> <span class="pre">[options]</span></code></p>
+<p>Defines the integrator used during the time integration.</p>
+<p>Allowed integrator names: <code class="docutils literal notranslate"><span class="pre">GJF</span></code>, which uses the Gronbeck-Jensen and Farago [<em>Mol Phys</em> 2013] to discretize the Stoermer-Verlet algorithm.</p>
+<p>Optional arguments:</p>
+<p><code class="docutils literal notranslate"><span class="pre">delt</span> <span class="pre">[float</span> <span class="pre">value]</span></code>: size of time step to use. Default value 0.002.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">integrator</span> <span class="nb">all</span> <span class="n">GJF</span>
+<span class="n">integrator</span> <span class="nb">all</span> <span class="n">GJF</span> <span class="n">delt</span> <span class="mf">0.005</span>
+</pre></div>
+</div>
+</section>
+<section id="logfreq">
+<h2>logFreq<a class="headerlink" href="#logfreq" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">logFreq</span> <span class="pre">[value]</span></code></p>
+<p>Number of iterations between writes to the log file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logFreq</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</section>
+<section id="maxangles">
+<h2>MAXANGLES<a class="headerlink" href="#maxangles" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">MAXANGLES</span> <span class="pre">[int</span> <span class="pre">value]</span></code></p>
+<p>Maximum number of angles allowed on each particle. Should be defined before molecules are created.<br />
+Default value: 3</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MAXANGLES</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</section>
+<section id="maxbonds">
+<h2>MAXBONDS<a class="headerlink" href="#maxbonds" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">MAXBONDS</span> <span class="pre">[int</span> <span class="pre">value]</span></code></p>
+<p>Maximum number of bonds allowed on each particle. Should be defined before molecules are created. Default value: 2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MAXBONDS</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</section>
+<section id="molecule">
+<h2>molecule<a class="headerlink" href="#molecule" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">molecule</span> <span class="pre">[architecture]</span> <span class="pre">[amount]</span> <span class="pre">[Number</span> <span class="pre">of</span> <span class="pre">blocks]</span> <span class="pre">[block</span> <span class="pre">1</span> <span class="pre">N,</span> <span class="pre">specices]</span>&#160; <span class="pre">...</span> <span class="pre">[optional</span> <span class="pre">args]</span></code></p>
+<p>Add molecules to the simulation box of type ‘architecture’. Multiple molecules can be added before the <code class="docutils literal notranslate"><span class="pre">endBox</span></code> command.</p>
+<p>See the <a class="reference internal" href="psMolecules.html"><span class="std std-doc">molecules section</span></a> for complete details and examples.</p>
+</section>
+<section id="nr">
+<h2>Nr<a class="headerlink" href="#nr" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Nr</span> <span class="pre">[integer]</span></code></p>
+<p>Reference chain length that will be used for some initialization tools that will be developed in the future.</p>
+</section>
+<section id="nsextra">
+<h2>NSEXTRA<a class="headerlink" href="#nsextra" title="Link to this heading">#</a></h2>
+</section>
+<section id="pmeorder">
+<h2>pmeorder<a class="headerlink" href="#pmeorder" title="Link to this heading">#</a></h2>
+</section>
+<section id="potential">
+<h2>potential<a class="headerlink" href="#potential" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">potential</span> <span class="pre">[style]</span> <span class="pre">[parameters]</span></code></p>
+<p>Defines a non-bonded potential, typically acting between two groups. See the <em>particle potentials</em> page for details.</p>
+</section>
+<section id="randseed">
+<h2>randSeed<a class="headerlink" href="#randseed" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">randSeed</span> <span class="pre">[int</span> <span class="pre">value]</span></code></p>
+<p>Set the random number seed to <code class="docutils literal notranslate"><span class="pre">value</span></code> for <em>both</em> CPU and GPU random number generators.</p>
+<p>Default value: set to the clock; this makes a different seed for each simulation that is started at different times.</p>
+<p>NOTE: if one uses scripts to initialize many simulations and they all spawn and begin with rapid succession, you may end up with multiple jobs running with the same RNG seed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">randSeed</span> <span class="mi">777</span>
+</pre></div>
+</div>
+</section>
+<section id="readdata">
+<h2>readData<a class="headerlink" href="#readdata" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">readData</span> <span class="pre">[string</span> <span class="pre">filename]</span></code></p>
+<p>Reads a lammps-style input configuration. The expected format is angle-style, though the order and spacing of the data in the file is more rigid in this code than LAMMPS.</p>
+<p>If charges are contained in the provided data file, <code class="docutils literal notranslate"><span class="pre">doCharges</span></code> must be given before readData.</p>
+<p>If additional molecules are to be added to the configuration provided in the data file using the <code class="docutils literal notranslate"><span class="pre">molecule</span></code> command, then readData must precede the <code class="docutils literal notranslate"><span class="pre">molecule</span></code> commands.</p>
+</section>
+<section id="rho0">
+<h2>rho0<a class="headerlink" href="#rho0" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rho0</span> <span class="pre">[float]</span></code></p>
+<p>Sets the monomer density used in some of the initialization routines.</p>
+</section>
+<section id="species">
+<h2>species<a class="headerlink" href="#species" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">species</span> <span class="pre">[label]</span> <span class="pre">[optional</span> <span class="pre">arguments]</span></code></p>
+<p>Label for the various species that will be simulated. In most contexts, species will be labeled ‘A’, ‘B’, etc, consistent with the notation used in most field-theoretic contexts. If a molecule is going to contain monomers of a given species, <em>the species must be defined before the molecule</em>.</p>
+<p>Optional arguments:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mass</span> <span class="pre">[float]</span></code></p>
+<p>Floating point mass of the particles. Default value 1.0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mobility</span> <span class="pre">[float]</span></code></p>
+<p>Floating point mobility of the particles. Default value 1.0.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">species</span> <span class="n">A</span>
+<span class="n">species</span> <span class="n">B</span> <span class="n">mass</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">species</span> <span class="n">A</span> <span class="n">mobility</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</section>
+<section id="trajfilename">
+<h2>trajFileName<a class="headerlink" href="#trajfilename" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">trajFileName</span> <span class="pre">[string</span> <span class="pre">name]</span></code></p>
+<p>Change the name of the lammpstrj file to the given name. Default is traj.lammpstrj.</p>
+</section>
+<section id="trajfreq">
+<h2>trajFreq<a class="headerlink" href="#trajfreq" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">trajFreq</span> <span class="pre">[integer</span> <span class="pre">value]</span></code></p>
+<p>Set the frequency for writing to the lammpstrj file. These files are much less efficient than the GSD format and should be used sparingly.</p>
+</section>
+<section id="verbose">
+<h2>verbose<a class="headerlink" href="#verbose" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">[val]</span></code></p>
+<p>Sets the code for the current box to be ‘verbose’ if val = 1, meaning tons of information will be printed to the screen about where the code is. This also enables some calls to cudaDeviceSynchronize(), which can be useful for debugging. This WILL slow the code down and the total number of steps run in this mode should be minimal.</p>
+<p>Default: 0 (false)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verbose</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ps"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="particles.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Particle-based simulations (PS)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="psMolecules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS Molecules</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angle">angle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blocksize">blockSize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bond">bond</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxlengths">boxLengths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datfilename">datFileName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dim">Dim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endbox">endBox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fieldfreq">fieldFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docharges">doCharges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grid">grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gsdfreq">gsdFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gsdname">gsdName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initdatafilename">initDataFileName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrator">integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logfreq">logFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxangles">MAXANGLES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxbonds">MAXBONDS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecule">molecule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nr">Nr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nsextra">NSEXTRA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pmeorder">pmeorder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential">potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randseed">randSeed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readdata">readData</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho0">rho0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#species">species</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajfilename">trajFileName</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajfreq">trajFreq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbose">verbose</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

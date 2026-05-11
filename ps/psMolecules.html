@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PS Molecules &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ps/psMolecules';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS Potentials" href="potentials.html" />
+    <link rel="prev" title="PS input file keywords" href="psKeywords.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MATILDA.FT - Mesoscale simulations of soft matter systems
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utilities and post-processing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fts/fts.html">Field-Theoretic Simulations (FTS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsKeywords.html">FTS input file keywords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsMolecules.html">FTS Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/ftsPotentials.html">FTS Potentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fts/integration.html">Integration schemes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="particles.html">Particle-based simulations (PS)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="psKeywords.html">PS input file keywords</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">PS Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="potentials.html">PS Potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using this software:</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ps/psMolecules.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PS Molecules</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-multiblock-polymers">Linear multiblock polymers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-arguments">Optional arguments:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafted-linear-polymers">Grafted linear polymers</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ps-molecules">
+<h1>PS Molecules<a class="headerlink" href="#ps-molecules" title="Link to this heading">#</a></h1>
+<p>Currently, only linear and grafted linear (e.g., comb or bottle brush) molecules are supported.</p>
+<section id="linear-multiblock-polymers">
+<h2>Linear multiblock polymers<a class="headerlink" href="#linear-multiblock-polymers" title="Link to this heading">#</a></h2>
+<p>Architecture must be <code class="docutils literal notranslate"><span class="pre">linear</span></code>; nonlinear architectures (stars, bottlebrushes, etc) will be added in the future.</p>
+<p>Amount can be specified as <code class="docutils literal notranslate"><span class="pre">phi</span></code> or <code class="docutils literal notranslate"><span class="pre">nmolecs</span></code>. If <code class="docutils literal notranslate"><span class="pre">nmolecs</span></code>, must be followed by an integer specifying the number of molecules of this type to add. If <code class="docutils literal notranslate"><span class="pre">phi</span></code> is used, the number of molecules to add is computed as <span class="math notranslate nohighlight">\(n = \textrm{int}(\rho_0 V \phi / N_{tot})\)</span>, where <span class="math notranslate nohighlight">\(N_{tot}\)</span> is the sum of <span class="math notranslate nohighlight">\(N\)</span> for each block in this molecule, <span class="math notranslate nohighlight">\(\rho_0\)</span> is the nominal monomer density, and <span class="math notranslate nohighlight">\(V\)</span> is the system volume.
+\
+NOTE: The value of <span class="math notranslate nohighlight">\(\phi\)</span> provided is <em>only</em> used to compute the number of molecules using the formula above. If multiple molecules are defined and the sum of all of the <span class="math notranslate nohighlight">\(\phi\)</span> values provided is greater than 1, <em>this will not be caught</em>.
+\
+NOTE: The number of molecules is computed assuming that all monomers have equal volume.</p>
+<p>Each block is defined as the integer number of monomers followed by the species label. All species must be defined prior to using them in a molecule.</p>
+<section id="optional-arguments">
+<h3>Optional arguments:<a class="headerlink" href="#optional-arguments" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">xrange</span></code>, <code class="docutils literal notranslate"><span class="pre">yrange</span></code>, <code class="docutils literal notranslate"><span class="pre">zrange</span></code>. These limit the range where the molecules are grown. By default, all molecules are grown as random walks at random locations in the simulation box grown from the first monomer, placed at random in the box. If one or more of the optional arguments are provided, then the first monomer will be placed in the range provided, but the remaining monomers will be grown randomly ignoring the range provided.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bondType</span> <span class="pre">[list</span> <span class="pre">of</span> <span class="pre">integers]</span></code>. There must one bondType specified for each block of the copolymer; by default, the bonds will be defined as bond type 1.
+\
+NOTE: Bonds for a junction between blocks will be defined as the bond type of the lowest indexed block.</p>
+<p><code class="docutils literal notranslate"><span class="pre">charge</span> <span class="pre">[charge</span> <span class="pre">on</span> <span class="pre">each</span> <span class="pre">block]</span></code>. Float values for the charge on each block. This will enable charges in the simulation and add charges to the written init.input.data configuration file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">angleType</span> <span class="pre">[list</span> <span class="pre">of</span> <span class="pre">integers]</span></code>. There must be one angleType specific for each block of the copolymer; by default, angles are disabled. Setting angleType to 0 will make that block fully flexible.
+\
+In block polymers, the ‘middle’ particle of the three involved in the angle determines the angle type. For example, declaring a molecule using <code class="docutils literal notranslate"><span class="pre">molecule</span> <span class="pre">linear</span> <span class="pre">nmolecs</span> <span class="pre">1</span> <span class="pre">3</span> <span class="pre">5</span> <span class="pre">A</span> <span class="pre">10</span> <span class="pre">B</span> <span class="pre">5</span> <span class="pre">A</span> <span class="pre">angleType</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span></code> will make an A-B-A, coil-rod-coil triblock copolymer with particles 1-5 and 16-20 as the two A blocks, and 6-15 defining the B blocks. Since particle 6 is part of the B block with the angle potential, there <em>will</em> be an angle involving the set of particles <span class="math notranslate nohighlight">\(\{5,6,7\}\)</span> and <span class="math notranslate nohighlight">\(\{14,15,16\}\)</span>. Similarly, if instead this same molecule command were instead appended with <code class="docutils literal notranslate"><span class="pre">angleType</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code>, then both sets <span class="math notranslate nohighlight">\(\{5,6,7\}\)</span> and <span class="math notranslate nohighlight">\(\{14,15,16\}\)</span> would use angleType 2, but the angle defined between <span class="math notranslate nohighlight">\(\{4,5,6\}\)</span> would use angleType 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">molecule</span> <span class="n">linear</span> <span class="n">phi</span> <span class="mf">0.5</span> <span class="mi">1</span> <span class="mi">40</span> <span class="n">A</span> <span class="n">xrange</span> <span class="mf">0.0</span> <span class="mf">25.0</span>
+<span class="n">molecule</span> <span class="n">linear</span> <span class="n">nmolecs</span> <span class="mi">10</span> <span class="mi">2</span> <span class="mi">20</span> <span class="n">A</span> <span class="mi">20</span> <span class="n">B</span>
+<span class="n">molecule</span> <span class="n">linear</span> <span class="n">phi</span> <span class="mf">0.1</span> <span class="mi">3</span> <span class="mi">10</span> <span class="n">A</span> <span class="mi">20</span> <span class="n">B</span> <span class="mi">10</span> <span class="n">C</span> <span class="n">bondType</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>In the above examples, the first command makes enough linear, type-A homopolymer molecules to be 50% by number on a monomer basis. The first monomer is placed in the x range given, and the rest of the chain is grown as a random walk from that starting monomer.</p>
+<p>The second example makes ten diblock copolymer molecules with <span class="math notranslate nohighlight">\(N_{tot} = 40\)</span> and 20 monomers per block.</p>
+<p>The third example makes a triblock copolymer with <span class="math notranslate nohighlight">\(N_A=10, N_B=20,\)</span> and <span class="math notranslate nohighlight">\(N_C=10\)</span>. The bond types for the A and C blocks are type 1, while those for the middle block are of type 2. The A-B junction will be defined with a type 1 bond, while the B-C junction will be defined as type 2.</p>
+</section>
+</section>
+<section id="grafted-linear-polymers">
+<h2>Grafted linear polymers<a class="headerlink" href="#grafted-linear-polymers" title="Link to this heading">#</a></h2>
+<p>The above commands can be augmented to graft linear polymers along the backbone. To implement grafting, the <strong>final</strong> command passed to <code class="docutils literal notranslate"><span class="pre">molecule</span></code> must be <code class="docutils literal notranslate"><span class="pre">grafting</span></code> followed by a syntax similar to the above for linear polymers. Each block of the main backbone must have a section in the grafting command. Some examples follow.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">molecule</span> <span class="n">linear</span> <span class="n">phi</span> <span class="mf">0.5</span>  <span class="mi">1</span>  <span class="mi">40</span> <span class="n">A</span>  <span class="n">grafting</span> <span class="mi">1</span> <span class="mi">20</span> <span class="n">A</span>
+</pre></div>
+</div>
+<p>This example creates a linear chain with 40 A monomers along the main backbone and grafts at each monomer that are 20 A monomers long.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ps"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="psKeywords.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PS input file keywords</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="potentials.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS Potentials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-multiblock-polymers">Linear multiblock polymers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-arguments">Optional arguments:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafted-linear-polymers">Grafted linear polymers</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
