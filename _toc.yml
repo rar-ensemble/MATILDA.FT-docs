@@ -1,0 +1,17 @@
+format: jb-book
+root: intro
+chapters:
+  - file: overview
+  - file: utils
+  - file: fts/fts
+    sections:
+      - file: fts/ftsKeywords
+      - file: fts/ftsMolecules
+      - file: fts/ftsPotentials
+      - file: fts/integration
+  - file: ps/particles
+    sections:
+      - file: ps/psKeywords
+      - file: ps/psMolecules
+      - file: ps/potentials
+  - file: publications
