@@ -1,0 +1,15 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: a1df1561-a1ed-4ec1-9d22-7fd7d23b39a6
+  title: MATILDA.FT Documentation
+  # description:
+  # keywords: []
+  authors: [Robert A. Riggleman]
+  github: https://github.com/rar-ensemble/MATILDA.FT-docs
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
