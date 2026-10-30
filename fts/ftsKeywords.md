@@ -171,3 +171,24 @@ if ( step % logFreq == 0 ) {
 } 
 ```
 It assumes the total number of monomers for the denominator to compute $\phi$ is $\rho_0 V$.
+
+
+
+
+
+
+
+## u_grid  
+`u_grid [integer(s)]`  
+
+Discretization of the unit sphere. If simulation is 2D, just one integer is needed for $\theta \in [0,2\pi]$; two in 3D for $\theta \in [0,2\pi], \phi\in [0,\pi]$. In 2D, the integral is handled using the trapezoid rule,   
+$$
+\int_0^{2\pi} d\theta \, f(\theta) \approx \frac{2\pi}{N_\theta} \sum_{i=1}^{N_\theta} f_i.
+$$  
+
+In 3D, we use the trapezoid rule for $\theta$; for $\phi$, I have implemented the Gaussian-Legendre rule, which uses tabulated weights.  
+$$
+\int_0^{2\pi} \int_0^{\pi} d\theta d\phi\, f(\theta, \phi) \approx \frac{2\pi}{N_\theta} \sum_{i=1}^{N_\theta} \sum_{j=1}^{N_\phi} f_{i,j} \, w_j.
+$$
+
+

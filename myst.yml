@@ -3,6 +3,8 @@ version: 1
 project:
   id: a1df1561-a1ed-4ec1-9d22-7fd7d23b39a6
   title: MATILDA.FT Documentation
+  # math:
+  #   '\mb': '{\mathbf}'
   # description:
   # keywords: []
   authors: [Robert A. Riggleman]
