@@ -75,9 +75,12 @@ Terminates the initialization of the current simulation box. The 'closing' argum
 
 
 ### fieldFreq
-``fieldFreq [integer value]``
+``fieldFreq [integer value] {optional:} [logspace] [scale factor]``
 
 Frequency of writing field data to the disk. 
+
+If `logspace` is given, then after writing to the gsd file, gsdFreq is scaled by `factor`, which must be greater than 1. This creates a gsd file with log-spaced frames.  
+
 
 ```
 fieldFreq 100
@@ -99,10 +102,11 @@ grid 63 63 63
 ```
 
 ### gsdFreq
-`gsdFreq [integer value]`
+`gsdFreq [integer value] {optional:} [logspace] [scale factor]`
 
-Number of time steps between writes to gsd file.
+Number of time steps between writes to gsd file.  
 
+If `logspace` is given, then after writing to the gsd file, gsdFreq is scaled by `factor`, which must be greater than 1. This creates a gsd file with log-spaced frames.  
 
 ### gsdName
 `gsdName [string name]`
@@ -169,7 +173,7 @@ MAXBONDS 4
 
 Add molecules to the simulation box of type 'architecture'. Multiple molecules can be added before the `endBox` command.
 
-Architecture must be `linear`; nonlinear architectures (stars, bottlebrushes, etc) will be added in the future.
+Architecture must be `linear`, `bottlebrush`, or `sclc`. See below for examples implementing linear polymers, see the molecule page for `bottlebrush` and `sclc` syntax.
 
 Amount can be specified as `phi` or `nmolecs`. If `nmolecs`, must be followed by an integer specifying the number of molecules of this type to add. If `phi` is used, the number of molecules to add is computed as $n = \textrm{int}(\rho_0 V \phi / N_{tot})$, where $N_{tot}$ is the sum of $N$ for each block in this molecule, $\rho_0$ is the nominal monomer density, and $V$ is the system volume. 
 \\
@@ -179,19 +183,6 @@ NOTE: The number of molecules is computed assuming that all monomers have equal 
 
 Each block is defined as the integer number of monomers followed by the species label. All species must be defined prior to using them in a molecule.
 
-**Optional arguments:**
-
-`xrange`, `yrange`, `zrange`. These limit the range where the molecules are grown. By default, all molecules are grown as random walks at random locations in the simulation box grown from the first monomer, placed at random in the box. If one or more of the optional arguments are provided, then the first monomer will be placed in the range provided, but the remaining monomers will be grown randomly ignoring the range provided.
-
-`bondType [list of integers]`. There must one bondType specified for each block of the copolymer; by default, the bonds will be defined as bond type 1.
-\\
-NOTE: Bonds for a junction between blocks will be defined as the bond type of the lowest indexed block.
-
-`charge [charge on each block]`. Float values for the charge on each block. This will enable charges in the simulation and add charges to the written init.input.data configuration file.
-
-`angleType [list of integers]`. There must be one angleType specific for each block of the copolymer; by default, angles are disabled. Setting angleType to 0 will make that block fully flexible.
-\\
-In block polymers, the 'middle' particle of the three involved in the angle determines the angle type. For example, declaring a molecule using `molecule linear nmolecs 1 3 5 A 10 B 5 A angleType 0 1 0` will make an A-B-A, coil-rod-coil triblock copolymer with particles 1-5 and 16-20 as the two A blocks, and 6-15 defining the B blocks. Since particle 6 is part of the B block with the angle potential, there *will* be an angle involving the set of particles $\{5,6,7\}$ and $\{14,15,16\}$. Similarly, if instead this same molecule command were instead appended with `angleType 1 2 3`, then both sets $\{5,6,7\}$ and $\{14,15,16\}$ would use angleType 2, but the angle defined between $\{4,5,6\}$ would use angleType 1.
 
 
 ```

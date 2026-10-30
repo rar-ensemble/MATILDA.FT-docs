@@ -25,6 +25,19 @@ boxLengths 6.0 6.0 6.0
 Number of iterations between writing the potential fields to human-readable files. Fields are written as complex values.
 
 
+## clSampleFreq
+`clSampleFreq [integer]`
+
+Number of iterations between saving samples for CL averaging. Currently just operates on density operators.
+
+
+## clSampleFreq
+`cl_wait [integer]`  
+or  
+`CLWait [integer]`  
+
+Number of iterations between saving samples for CL averaging. Currently just operates on density operators.
+
 
 
 

@@ -1,7 +1,6 @@
 # FTS Potentials
 
 
-
 ## Edwards potential
 
 $$
